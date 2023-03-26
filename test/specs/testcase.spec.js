@@ -7,9 +7,7 @@ describe('Swag Labs', () => {
     await browser.url('https://www.saucedemo.com/')
     await browser.maximizeWindow()
     //Screenshot login
-    await browser.saveScreenshot(
-      '/Users/docheck/Desktop/coba/test/SS/1-login.png'
-    )
+    await browser.saveScreenshot('test/SS/1-login.png')
   })
 
   it('can log in', async () => {
@@ -17,9 +15,7 @@ describe('Swag Labs', () => {
     checkURL = `https://www.saucedemo.com/inventory.html`
     expect(await browser.getUrl()).toEqual(checkURL) // check currently URL
     //Screenshot after login
-    await browser.saveScreenshot(
-      '/Users/docheck/Desktop/coba/test/SS/2-after-login.png'
-    )
+    await browser.saveScreenshot('test/SS/2-after-login.png')
   })
 
   it('can sort products by highest price', async () => {
@@ -29,9 +25,7 @@ describe('Swag Labs', () => {
     await Main.checkDefaultFilter('Price (high to low)') // checking filter after select
     await browser.pause(1000)
     //Screenshot filter high to low
-    await browser.saveScreenshot(
-      '/Users/docheck/Desktop/coba/test/SS/3-filter-high-to-low.png'
-    )
+    await browser.saveScreenshot('test/SS/3-filter-high-to-low.png')
   })
 
   it('checking how much list product highest price', async () => {
@@ -42,9 +36,7 @@ describe('Swag Labs', () => {
     await Main.checkListProduct(6)
     await browser.pause(1000)
     //Screenshot login
-    await browser.saveScreenshot(
-      '/Users/docheck/Desktop/coba/test/SS/4-how-much-list-prod.png'
-    )
+    await browser.saveScreenshot('test/SS/4-how-much-list-prod.png')
   })
 
   it('Select and open first result. Verify the details (Product Name & Price)', async () => {
@@ -99,9 +91,7 @@ describe('Swag Labs', () => {
     await browser.pause(1000)
 
     //Screenshot has 2 product to cart
-    await browser.saveScreenshot(
-      '/Users/docheck/Desktop/coba/test/SS/5-cart_item.png'
-    )
+    await browser.saveScreenshot('test/SS/5-cart_item.png')
 
     // user checkout step -1
     await $('[data-test="checkout"]').click()
@@ -110,17 +100,13 @@ describe('Swag Labs', () => {
     await browser.pause(1000)
 
     //Screenshot check your information
-    await browser.saveScreenshot(
-      '/Users/docheck/Desktop/coba/test/SS/6-check-your-information.png'
-    )
+    await browser.saveScreenshot('test/SS/6-check-your-information.png')
 
     // filled checkout information
     await Main.submitCheckout('wira', 'wardhana', 4091)
     await browser.pause(1000)
     //Screenshot after fill information
-    await browser.saveScreenshot(
-      '/Users/docheck/Desktop/coba/test/SS/7-checkout-overview.png'
-    )
+    await browser.saveScreenshot('test/SS/7-checkout-overview.png')
 
     // user checkout step -2
     checkURL = 'https://www.saucedemo.com/checkout-step-two.html'
@@ -141,8 +127,6 @@ describe('Swag Labs', () => {
     )
 
     //Screenshot complete
-    await browser.saveScreenshot(
-      '/Users/docheck/Desktop/coba/test/SS/8-complete.png'
-    )
+    await browser.saveScreenshot('test/SS/8-complete.png')
   })
 })
